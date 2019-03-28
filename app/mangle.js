@@ -1,5 +1,5 @@
 const whitelist = [
-  "Product Name",
+  // "Product Name",
   "Product ID",
   "Click Loans LVR & Rate ID",
   "Establishment Fee",
@@ -12,7 +12,7 @@ function selectFromTo(data, from, to) {
 }
 
 function selectFirst10(data) {
-  return selectFromTo(data, 0, 2);
+  return selectFromTo(data, 0, 20);
 }
 
 function filterData(data) {
@@ -38,7 +38,7 @@ function filterData(data) {
 }
 
 function mangle(data) {
-  return [selectFirst10, filterData].reduce((acc, fn) => fn(acc), data);
+  return [/*selectFirst10, */ filterData].reduce((acc, fn) => fn(acc), data);
 }
 
 module.exports = mangle;
